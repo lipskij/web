@@ -1,4 +1,4 @@
-# Your Name - Personal Website
+# Emil Lipskij - Personal Website
 
 Welcome to the repository for my personal website! This project showcases my skills, experiences, and projects in a clean and interactive format.
 
