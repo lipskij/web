@@ -50,7 +50,7 @@ After starting the development server, open your browser and visit `http://local
 ## 📁 Project Structure
 
 ```
-MY-WEB/
+WEB/
 │
 ├── .next/
 ├── app/
