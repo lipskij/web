@@ -1,96 +1,29 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import React from "react";
+import FloatingParticles from "./FloatingParticles";
+import { AboutCard, ContactsCard, WorkCard } from "./CardComponents";
 
-const Hero = () => {
-  const [slideUp, setSlideUp] = useState<boolean>(false);
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSlideUp(true);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Remove the cz-shortcut-listen attribute if it exists
-  useEffect(() => {
-    const removeAttribute = () => {
-      document.querySelectorAll("[cz-shortcut-listen]").forEach((el) => {
-        el.removeAttribute("cz-shortcut-listen");
-      });
-    };
-    removeAttribute();
-  }, []);
-  // when hovering should show the map
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  const handleMouseMove = (e: { clientX: number; clientY: number }) => {
-    setMousePosition({ x: e.clientX, y: e.clientY });
-  };
-
+const Hero: React.FC = () => {
   return (
-    <div>
-      <div
-        className={`overlay ${slideUp ? "bg-transparent hidden" : "bg-black"}`}
-      >
-        <Image
-          className="wave"
-          src="./hand2.svg"
-          alt="hand"
-          height={200}
-          width={200}
-        />
-      </div>
-      <div className="hero">
-        <div className="flex-1 pt-36">
-          <NameLabel />
-          <p className="hero__subtitle">
-            Web developer based in{" "}
-            <span
-              className="country"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              onMouseMove={handleMouseMove}
-            >
-              Lithuania
-            </span>
-            .
+    <div className="min-h-screen flex flex-col">
+      <div className="hero flex-grow flex flex-col justify-evenly py-8 px-4 md:px-8">
+        <FloatingParticles count={50} />
+        <div className="flex flex-col justify-center items-center text-center mb-8">
+          <h1 className="hero__title text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Hello, my name is Emil
+          </h1>
+          <p className="hero__subtitle text-lg md:text-xl text-gray-600">
+            Front-end developer based in Lithuania, Vilnius.
           </p>
         </div>
-      </div>
-      {isHovered && (
-        <div
-          style={{
-            position: "absolute",
-            top: mousePosition.y + 10, // Adjust for cursor offset
-            left: mousePosition.x + 10, // Adjust for cursor offset
-            width: "300px",
-            height: "300px",
-            padding: "1rem",
-            backgroundColor: "white",
-            borderRadius: "10px",
-          }}
-        >
-          <Image src="/map.png" height={300} width={300} alt="map" />
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          <AboutCard />
+          <WorkCard />
+          <ContactsCard />
         </div>
-      )}
+      </div>
     </div>
   );
 };
-export default Hero;
 
-const NameLabel = () => {
-  return (
-    <div className="div">
-      <h1 className="hero__title">Hello, my name is NAME</h1>
-    </div>
-  );
-};
+export default Hero;

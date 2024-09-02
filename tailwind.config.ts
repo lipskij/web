@@ -29,17 +29,13 @@ module.exports = {
           "0%": { transform: "translateY(100%)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
-        slideOutUp: {
-          "0%": { transform: "translateY(0)" },
-          "100%": { transform: "translateY(-100%)" },
-        },
         textShine: {
           "0%": { backgroundPosition: "0% 50%" },
           "100%": { backgroundPosition: "100% 50%" },
         },
       },
       animation: {
-        slideInUp: "slideInUp 1s cubic-bezier(0.25, 0.8, 0.25, 1) 1s",
+        slideInUp: "slideInUp 1s cubic-bezier(0.25, 0.8, 0.25, 1)",
         slideOutUp: "slideOutUp 1s cubic-bezier(0.25, 0.8, 0.25, 1) 1s",
         textShine: "textShine 3s infinite alternate",
       },
