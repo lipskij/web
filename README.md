@@ -1,6 +1,6 @@
 # Emil Lipskij - Personal Website
 
-Welcome to the repository for my personal website! This project showcases my skills, experiences, and projects in a clean and interactive format.
+Welcome to the repository for my personal website! This project showcases my skills, experiences, and projects in a clean and interactive format using Next.js.
 
 ## 🚀 Features
 
@@ -11,10 +11,11 @@ Welcome to the repository for my personal website! This project showcases my ski
 
 ## 🛠️ Technologies Used
 
-- HTML5
-- CSS3 (with Sass)
+- Next.js
+- React
+- TypeScript
+- CSS (with Tailwind CSS)
 - JavaScript (ES6+)
-- [React]
 
 ## 📋 Prerequisites
 
@@ -27,7 +28,7 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/web.git
+   git clone https://github.com/lipskij/web.git
    ```
 2. Navigate to the project directory:
    ```
@@ -44,32 +45,46 @@ Before you begin, ensure you have the following installed:
 
 ## 🖥️ Usage
 
-After starting the development server, open your browser and visit `http://localhost:3000` (or whatever port your project uses) to view the website.
+After starting the development server, open your browser and visit `http://localhost:3000` to view the website.
 
 ## 📁 Project Structure
 
 ```
-personal-website/
+MY-WEB/
 │
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── styles/
-│   └── App.js
-│
+├── .next/
+├── app/
+│   ├── about.tsx
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── CardComponents.tsx
+│   ├── FloatingParticles.tsx
+│   ├── Hero.tsx
+│   ├── index.ts
+│   └── Nav.tsx
+├── node_modules/
 ├── public/
-│   └── index.html
-│
+├── .eslintrc.json
+├── .gitignore
+├── next-env.d.ts
+├── next.config.mjs
+├── package-lock.json
 ├── package.json
-└── README.md
+├── postcss.config.mjs
+├── README.md
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
 ## 📞 Contact
 
 Emil - [emil.lipskij@gmail.com](mailto:emil.lipskij@gmail.com)
 
-Project Link: [https://github.com/yourusername/webe](https://github.com/yourusername/web)
+Project Link: [https://github.com/lipskij/web](https://github.com/lipskij/web)
 
 ---
 
-Thank you for visiting my personal website repository! I hope you enjoy exploring my work.
+Thank you for visiting my personal website repository!
