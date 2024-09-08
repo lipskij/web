@@ -50,9 +50,6 @@ body {
 }
 
 /* START: Hero styles */
-/* .hero {
-  @apply flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440px] mx-auto;
-} */
 
 .hero__title {
   @apply animate-slideInUp 2xl:text-[62px] sm:text-[54px] text-[40px] font-extrabold px-10 text-white;
@@ -65,10 +62,38 @@ body {
 .text-shadow {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-/* NAV */
 
+.name {
+  display: inline-block;
+}
+.name span {
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.name span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+.name span:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffee10;
+}
+.name span:hover {
+  color: #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+}
+
+/* NAV */
 .a {
-  background-image: linear-gradient(to right, #def78a, #def78a 50%, #fff 50%);
+  background-image: linear-gradient(to right, #ffee10, #ffee10 50%, #fff 50%);
   background-size: 200% 100%;
   background-position: -100%;
   display: inline-block;
@@ -81,7 +106,7 @@ body {
 
 .a:before {
   content: "";
-  background: #def78a;
+  background: #ffee10;
   display: block;
   position: absolute;
   bottom: -3px;
@@ -93,10 +118,12 @@ body {
 
 .a:hover {
   background-position: 0;
+  text-shadow: 0 0 5px #ffee10;
 }
 
 .a:hover::before {
   width: 100%;
+  box-shadow: 0 0 5px #ffee10;
 }
 @media (prefers-color-scheme: dark) {
   :root {

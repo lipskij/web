@@ -3,19 +3,23 @@ import React, { ReactNode } from "react";
 interface CardProps {
   children: ReactNode;
   className?: string;
+  delay?: number;
 }
 
-const Card: React.FC<CardProps> = ({ children, className }) => (
+const Card: React.FC<CardProps> = ({ children, className, delay }) => (
   <div
     className={`
-    bg-white bg-opacity-5 backdrop-filter backdrop-blur-sm
+   bg-white bg-opacity-5 backdrop-filter backdrop-blur-sm
     shadow-lg rounded-lg overflow-hidden
     border border-white border-opacity-10
     flex flex-col
-    transition-all duration-300 ease-in-out
-    hover:scale-105 hover:shadow-xl
+    opacity-0 animate-slideInUp
     ${className}
   `}
+    style={{
+      animationDelay: `${delay}ms`,
+      animationFillMode: "forwards",
+    }}
   >
     {children}
   </div>
@@ -58,7 +62,7 @@ const Button: React.FC<ButtonProps> = ({ children, className, onClick }) => (
 );
 
 const AboutCard: React.FC = () => (
-  <Card className="w-64 h-64">
+  <Card className="w-64 h-64" delay={400}>
     <CardHeader>
       <h3 className="font-bold text-lg flex items-center text-white">
         <svg
@@ -89,7 +93,7 @@ const AboutCard: React.FC = () => (
 );
 
 const ContactsCard: React.FC = () => (
-  <Card className="w-64 h-64">
+  <Card className="w-64 h-64" delay={800}>
     <CardHeader>
       <h3 className="font-bold text-lg flex items-center text-white">
         <svg
@@ -115,7 +119,7 @@ const ContactsCard: React.FC = () => (
 );
 
 const WorkCard: React.FC = () => (
-  <Card className="w-64 h-64">
+  <Card className="w-64 h-64" delay={1000}>
     <CardHeader>
       <h3 className="font-bold text-lg flex items-center text-white">
         <svg
