@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
     <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] px-4 md:px-8">
       <div className="max-w-4xl w-full">
         <div className="text-center mb-12">
-          <h1 className="hero__title text-3xl md:text-4xl lg:text-5xl font-bold mb-6 mt-6 text-white">
+          <h1 className="hero__title text-3xl md:text-4xl lg:text-5xl font-bold mb-6 mt-6 text-white leading-[3rem]">
             Hello, my name is{" "}
             <div className="name">
               <span>E</span>
