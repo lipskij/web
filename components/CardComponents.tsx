@@ -9,7 +9,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ children, className, delay }) => (
   <div
     className={`
-   bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm
+   bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm
     shadow-lg rounded-lg overflow-hidden
     border border-white border-opacity-20
     flex flex-col
